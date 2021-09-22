@@ -12,8 +12,8 @@ app.use(express.static('public'))
 app.set('view engine' , 'ejs')
 app.use(bodyParser.urlencoded({extended:true}))
 
-
-mongoose.connect(process.env.MONGO_URL,
+var url = 'mongodb+srv://user1:123abc@cluster0.zv8qh.mongodb.net/registry?retryWrites=true&w=majority'
+mongoose.connect(url,
 	{ useNewUrlParser: true, useUnifiedTopology: true }, err => {
 		console.log('connected')
 	});
